@@ -1,10 +1,10 @@
 # Vzduch Home Assistant Addon
 
-[Vzduch-Dotek](https://github.com/ozczecho/vzduch-dotek) is an API interface to the AirTouch 3 AC controller. This addon makes it super easy to get it up and running for Home Assistant.
+[Vzduch-Dotek](https://github.com/tomea-aceris/vzduch-dotek) is an API interface to the AirTouch 3 AC controller. This addon makes it super easy to get it up and running for Home Assistant.
 
 ## Installation
 
-1. Add the following url to your Home Assistant Addons repositories (Supervisor -> Add-on store -> three dots upper right) `https://github.com/ozczecho/home-assistant-addons`
+1. Add the following url to your Home Assistant Addons repositories (Supervisor -> Add-on store -> three dots upper right) `https://github.com/tomea-aceris/home-assistant-addons`
 2. Install the `vzduch` addon
 3. Update the configuration to match your settings
 4. Click `Save`
