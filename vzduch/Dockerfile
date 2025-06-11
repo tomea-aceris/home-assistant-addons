@@ -15,7 +15,8 @@ RUN mkdir -p /usr/src/ /tmp/vzduch \
 WORKDIR /usr/src/vzduch-dotek-${VZDUCH_VERSION}
 
 RUN dotnet restore vzduch-dotek.sln
-RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishTrimmed=false /p:PublishSingleFile=false
+# RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishTrimmed=false /p:PublishSingleFile=false
+RUN dotnet publish vzduch-dotek.sln -c Release -o /app -r linux-arm64 --self-contained false /p:PublishTrimmed=false /p:PublishSingleFile=false
 
 # final stage/image
 FROM $BUILD_FROM
