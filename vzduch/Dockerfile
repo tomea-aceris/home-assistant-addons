@@ -12,6 +12,8 @@ RUN wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/r
 
 WORKDIR /usr/src/vzduch-dotek-${VZDUCH_VERSION}
 
+RUN ls -la /usr/src/vzduch-dotek-${VZDUCH_VERSION}
+
 RUN dotnet restore vzduch-dotek.sln
 RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishTrimmed=false /p:PublishSingleFile=false
 
