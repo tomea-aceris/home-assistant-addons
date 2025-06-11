@@ -19,6 +19,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 LABEL maintainer="Tome <tome@aceris.com.au>"
 
+# Install jq to support config parsing in run.sh
+RUN apt-get update && apt-get install -y jq && rm -rf /var/lib/apt/lists/*
+
 COPY --from=build /app /app
 WORKDIR /app
 
