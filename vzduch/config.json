@@ -9,7 +9,6 @@
     "startup": "application",
     "boot": "auto",
     "init": false,
-    "host_network": true,
     "ports": {
         "5353/tcp": 5353
     },
