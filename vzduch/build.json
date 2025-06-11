@@ -4,6 +4,6 @@
         "aarch64": "ghcr.io/hassio-addons/debian-base/aarch64:6.2.5"
 },
 "args": {
-    "VZDUCH_VERSION": "1.0.0"
+    "VZDUCH_VERSION": "v1.0.0"
     }
 }
