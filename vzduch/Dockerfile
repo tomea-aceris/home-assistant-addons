@@ -1,6 +1,3 @@
-RUN exit 99
-
-
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
