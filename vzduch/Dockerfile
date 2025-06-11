@@ -20,7 +20,7 @@ RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-con
 # final stage/image
 FROM $BUILD_FROM
 
-LABEL Mike <ozczecho@yahoo.com>
+LABEL Tome <tome@aceris.com.au>
 
 COPY --from=build /app .
 EXPOSE 5353
