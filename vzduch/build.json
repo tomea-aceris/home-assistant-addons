@@ -1,9 +1,9 @@
 {
-    "build_from": {
-        "amd64": "ghcr.io/hassio-addons/debian-base/amd64:6.2.5",
-        "aarch64": "ghcr.io/hassio-addons/debian-base/aarch64:6.2.5"
-},
-"args": {
+  "build_from": {
+    "aarch64": "mcr.microsoft.com/dotnet/sdk:8.0",
+    "amd64": "mcr.microsoft.com/dotnet/sdk:8.0"
+  },
+  "args": {
     "VZDUCH_VERSION": "1.0.0"
-    }
+  }
 }
