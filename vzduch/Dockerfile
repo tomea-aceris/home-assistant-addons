@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG VZDUCH_VERSION
 
-RUN mkdir -p /tmp/vzduch \
+RUN mkdir -p /usr/src/ /tmp/vzduch \
   && cd /tmp/vzduch \
   && wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/${VZDUCH_VERSION}.tar.gz \
   && tar xvzf vzduch.tar.gz -C /usr/src/
