@@ -4,7 +4,7 @@
     "slug": "vzduch_dotek",
     "description": "Vzduch Dotek Api",
     "arch": ["aarch64", "armv7", "amd64", "i386"],
-    "url":"https://github.com/ozczecho/vzduch-dotek",
+    "url":"https://github.com/tomea-aceris/vzduch-dotek",
     "webui": "http://[HOST]:[PORT:5353]/api/aircons",
     "startup": "application",
     "boot": "auto",
