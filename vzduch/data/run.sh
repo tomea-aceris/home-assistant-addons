@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/bin/bash
 set -e
 
 bashio::log.info "Airtouch configuration..."
