@@ -16,7 +16,7 @@
         "5353/tcp": "Web Api"
     },
     "options": {
-        "airtouch_host": "192.168.80.21",
+        "airtouch_host": "192.168.1.175",
         "airtouch_port": 8899,
         "logLevel": "Information"
     },
