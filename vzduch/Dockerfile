@@ -7,12 +7,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG VZDUCH_VERSION
 
+RUN wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/${VZDUCH_VERSION}.tar.gz \
+    && tar xzf vzduch.tar.gz -C /usr/src/ \
+    && cd /usr/src/vzduch-dotek-${VZDUCH_VERSION}
 
-RUN wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/"${VZDUCH_VERSION}".tar.gz \
-    && tar xvzf vzduch.tar.xz -C /usr/src/ \
-    && cd /usr/src/vzduch-dotek-"${VZDUCH_VERSION}"
-
-WORKDIR /usr/src/vzduch-dotek-"${VZDUCH_VERSION}"
+WORKDIR /usr/src/vzduch-dotek-${VZDUCH_VERSION}
 
 RUN dotnet restore vzduch-dotek.sln
 RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishReadyToRun=true
