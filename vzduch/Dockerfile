@@ -8,7 +8,7 @@ WORKDIR /tmp
 
 # Install dependencies and download the release tarball
 RUN apt-get update && apt-get install -y wget \
-  && wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/${VZDUCH_VERSION}.tar.gz \
+  && wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/1.0.0.tar.gz \
   && mkdir -p /tmp/build \
   && tar xzf vzduch.tar.gz -C /tmp/build --strip-components=1 \
   && rm vzduch.tar.gz
@@ -26,7 +26,7 @@ RUN dotnet restore vzduch-dotek.sln \
 # Stage 2: Final runtime container for Home Assistant
 # --------------------------------------------
 ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/hassio-addons/debian-base/arm64:6.2.5
 
 ENV LANG C.UTF-8
 LABEL maintainer="Tome <tome@aceris.com.au>"
