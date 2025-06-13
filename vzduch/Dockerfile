@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG VZDUCH_VERSION
 
-ARG CACHE_BREAKER=force_rebuild_20250613
+ARG CACHE_BREAKER=force_rebuild_202506131113
 LABEL cache_breaker=${CACHE_BREAKER}
 
 WORKDIR /tmp
