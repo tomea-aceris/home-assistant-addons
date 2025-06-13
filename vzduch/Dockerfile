@@ -12,7 +12,7 @@ WORKDIR /tmp
 
 # Install dependencies and download the release tarball
 RUN apt-get update && apt-get install -y wget \
-  && wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/1.0.0.tar.gz \
+  && wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/refs/tags/${VZDUCH_VERSION}.tar.gz \
   && mkdir -p /tmp/build \
   && tar xzf vzduch.tar.gz -C /tmp/build --strip-components=1 \
   && rm vzduch.tar.gz
