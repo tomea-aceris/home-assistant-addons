@@ -4,6 +4,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG VZDUCH_VERSION
+
+ARG CACHE_BREAKER=force_rebuild_20250613
+LABEL cache_breaker=${CACHE_BREAKER}
+
 WORKDIR /tmp
 
 # Install dependencies and download the release tarball
@@ -26,7 +30,7 @@ RUN dotnet restore vzduch-dotek.sln \
 # Stage 2: Final runtime container for Home Assistant
 # --------------------------------------------
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
 LABEL maintainer="Tome <tome@aceris.com.au>"
