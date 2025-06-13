@@ -1,12 +1,12 @@
-ARG VZDUCH_VERSION
-ARG BUILD_FROM
-
-RUN echo "DEBUG: BUILD_FROM=${BUILD_FROM}" && echo "DEBUG: VZDUCH_VERSION=${VZDUCH_VERSION}"
-
 # --------------------------------------------
 # Stage 1: Build the vzduch-dotek .NET app
 # --------------------------------------------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+ARG VZDUCH_VERSION
+ARG BUILD_FROM
+
+RUN echo "DEBUG: BUILD_FROM=${BUILD_FROM}" && echo "DEBUG: VZDUCH_VERSION=${VZDUCH_VERSION}"
 
 WORKDIR /tmp
 
