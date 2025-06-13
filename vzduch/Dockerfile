@@ -3,12 +3,10 @@
 # --------------------------------------------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-ARG VZDUCH_VERSION
-ARG BUILD_FROM
-
 RUN echo "DEBUG: BUILD_FROM=${BUILD_FROM}" && echo "DEBUG: VZDUCH_VERSION=${VZDUCH_VERSION}"
 
 WORKDIR /tmp
+ARG VZDUCH_VERSION
 
 # Install dependencies and download the release tarball
 RUN apt-get update && apt-get install -y wget \
@@ -29,6 +27,7 @@ RUN dotnet restore vzduch-dotek.sln \
 # --------------------------------------------
 # Stage 2: Final runtime container for Home Assistant
 # --------------------------------------------
+ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
