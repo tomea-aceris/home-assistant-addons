@@ -1,12 +1,12 @@
+ARG VZDUCH_VERSION
+ARG BUILD_FROM
+
+RUN echo "DEBUG: BUILD_FROM=${BUILD_FROM}" && echo "DEBUG: VZDUCH_VERSION=${VZDUCH_VERSION}"
+
 # --------------------------------------------
 # Stage 1: Build the vzduch-dotek .NET app
 # --------------------------------------------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-
-ARG VZDUCH_VERSION
-
-ARG CACHE_BREAKER=force_rebuild_202506131113
-LABEL cache_breaker=${CACHE_BREAKER}
 
 WORKDIR /tmp
 
@@ -29,7 +29,6 @@ RUN dotnet restore vzduch-dotek.sln \
 # --------------------------------------------
 # Stage 2: Final runtime container for Home Assistant
 # --------------------------------------------
-ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
