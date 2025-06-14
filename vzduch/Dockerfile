@@ -14,13 +14,13 @@ RUN wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/r
 WORKDIR /usr/src/vzduch-dotek-"${VZDUCH_VERSION}"
 
 RUN dotnet restore vzduch-dotek.sln
-RUN dotnet publish vzduch-dotek.sln \
+RUN dotnet publish VzduchDotek.Net/VzduchDotek.Net.csproj \
     -c Release \
     -o /app \
     -r linux-arm64 \
     --self-contained true \
-    /p:PublishSingleFile=true \
     /p:IncludeNativeLibrariesForSelfExtract=true \
+    /p:PublishSingleFile=false \
     /p:PublishTrimmed=false
 
 # final stage/image
