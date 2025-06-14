@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-FROM mcr.microsoft.com/dotnet/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG VZDUCH_VERSION
 
@@ -17,7 +17,7 @@ RUN dotnet restore vzduch-dotek.sln
 RUN dotnet publish -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishReadyToRun=true
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/runtime:3.1.12-buster-slim-arm64v8
+FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
 
 LABEL Mike <ozczecho@yahoo.com>
 
