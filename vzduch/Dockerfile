@@ -41,5 +41,6 @@ RUN chmod +x /run.sh
 WORKDIR /app
 EXPOSE 5353
 
+
 # Start the app
 CMD ["/run.sh"]
