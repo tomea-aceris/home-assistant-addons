@@ -12,5 +12,4 @@ export DOTEK_airTouch__localPort=$AIRTOUCH_PORT
 export DOTEK_Serilog__MinimumLevel__Default=$AIRTOUCH_LOGLEVEL
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
-cd /app
 exec ./app/VzduchDotek.Net
