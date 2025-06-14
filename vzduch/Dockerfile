@@ -14,7 +14,14 @@ RUN wget -O vzduch.tar.gz https://github.com/tomea-aceris/vzduch-dotek/archive/r
 WORKDIR /usr/src/vzduch-dotek-"${VZDUCH_VERSION}"
 
 RUN dotnet restore vzduch-dotek.sln
-RUN dotnet publish vzduch-dotek.sln -c release -o /app -r linux-arm64 --self-contained true --no-restore /p:PublishTrimmed=false /p:PublishSingleFile=false
+RUN dotnet publish vzduch-dotek.sln \
+    -c Release \
+    -o /app \
+    -r linux-arm64 \
+    --self-contained true \
+    /p:PublishSingleFile=true \
+    /p:IncludeNativeLibrariesForSelfExtract=true \
+    /p:PublishTrimmed=false
 
 # final stage/image
 FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
