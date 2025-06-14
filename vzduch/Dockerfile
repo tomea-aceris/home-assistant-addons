@@ -1,10 +1,11 @@
 # --------------------------------------------
 # Stage 1: Build the vzduch-dotek .NET app
 # --------------------------------------------
-ARG VZDUCH_VERSION
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /tmp
+
+ARG VZDUCH_VERSION
 
 # Install dependencies and download the release tarball
 RUN apt-get update && apt-get install -y wget \
