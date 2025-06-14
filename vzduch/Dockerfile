@@ -3,8 +3,6 @@
 # --------------------------------------------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-RUN echo "DEBUG: BUILD_FROM=${BUILD_FROM}" && echo "DEBUG: VZDUCH_VERSION=${VZDUCH_VERSION}"
-
 WORKDIR /tmp
 ARG VZDUCH_VERSION
 
