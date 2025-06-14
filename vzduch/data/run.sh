@@ -1,5 +1,5 @@
-#!/usr/bin/env bashio
-set -e
+#!/usr/bin/env bash
+source /usr/lib/hassio-addons/bashio.sh
 
 bashio::log.info "Airtouch configuration..."
 
