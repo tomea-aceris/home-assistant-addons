@@ -31,6 +31,9 @@ FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
 ENV LANG C.UTF-8
 LABEL maintainer="Tome <tome@aceris.com.au>"
 
+# Install ICU library
+RUN apt-get update && apt-get install -y libicu-dev && apt-get clean
+
 # Copy the published app from build stage
 COPY --from=build /app /app
 
