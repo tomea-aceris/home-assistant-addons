@@ -26,8 +26,7 @@ RUN dotnet restore vzduch-dotek.sln \
 # --------------------------------------------
 # Stage 2: Final runtime container for Home Assistant
 # --------------------------------------------
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
 
 ENV LANG C.UTF-8
 LABEL maintainer="Tome <tome@aceris.com.au>"
