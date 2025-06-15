@@ -28,7 +28,7 @@ FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
 
 LABEL Mike <ozczecho@yahoo.com>
 
-COPY --from=build /app .
+COPY --from=build /app /app
 EXPOSE 5353
 
 COPY data/run.sh /
