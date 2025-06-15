@@ -29,9 +29,11 @@ FROM ghcr.io/hassio-addons/debian-base/aarch64:6.2.5
 LABEL Mike <ozczecho@yahoo.com>
 
 COPY --from=build /app /app
-EXPOSE 5353
+WORKDIR /app
 
-COPY data/run.sh /
+COPY data/run.sh /run.sh
 RUN chmod a+x /run.sh
+
+EXPOSE 5353
 
 CMD [ "/run.sh" ]
